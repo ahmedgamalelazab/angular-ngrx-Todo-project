@@ -1,0 +1,279 @@
+<ul class="list-group mx-0 px-0">
+  <li
+    pDroppable="dd"
+    (onDrop)="todayDropEventHandler($event)"
+    (click)="activateSelected('today')"
+    [ngClass]="
+      menuList['today']['selected']
+        ? ' text-white list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2 bg-danger'
+        : 'list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2'
+    "
+    style="padding-left: 0px; padding-right: 0px"
+  >
+    <div class="d-flex justify-content-center align-items-center">
+      <svg
+        class="bi bi-sun fs-5 text-success"
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </svg>
+      <p
+        style="
+          margin-top: 1px;
+          margin-bottom: 1px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          margin-left: 5px;
+          margin-right: 5px;
+        "
+      >
+        Today
+      </p>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="padding-top: 0px; padding-bottom: 0px"
+    >
+      <p style="margin-top: 0px; margin-bottom: 0px">0h</p>
+      <p
+        style="
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-left: 4px;
+          margin-right: 4px;
+        "
+      >
+        {{ todayTodos.length }}
+      </p>
+    </div>
+  </li>
+  <li
+    pDroppable="dd"
+    (onDrop)="tomorrowDropEventHandler($event)"
+    (click)="activateSelected('tomorrow')"
+    [ngClass]="
+      menuList['tomorrow']['selected']
+        ? ' text-white list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2 bg-danger'
+        : 'list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2'
+    "
+    style="padding-left: 0px; padding-right: 0px"
+  >
+    <div class="d-flex justify-content-center align-items-center">
+      <svg
+        class="bi bi-sunrise fs-5 text-danger"
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708l1.5-1.5zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM8 7a3 3 0 0 1 2.599 4.5H5.4A3 3 0 0 1 8 7zm3.71 4.5a4 4 0 1 0-7.418 0H.499a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
+        ></path>
+      </svg>
+      <p
+        style="
+          margin-top: 1px;
+          margin-bottom: 1px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          margin-left: 5px;
+          margin-right: 5px;
+        "
+      >
+        Tomorrow
+      </p>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="padding-top: 0px; padding-bottom: 0px"
+    >
+      <p style="margin-top: 0px; margin-bottom: 0px">0h</p>
+      <p
+        style="
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-left: 4px;
+          margin-right: 4px;
+        "
+      >
+        0
+      </p>
+    </div>
+  </li>
+  <li
+    pDroppable="dd"
+    (onDrop)="upcomingDropEventHandler($event)"
+    (click)="activateSelected('upcoming')"
+    [ngClass]="
+      menuList['upcoming']['selected']
+        ? ' text-white list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2 bg-danger'
+        : 'list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2'
+    "
+    style="padding-left: 0px; padding-right: 0px"
+  >
+    <div class="d-flex justify-content-center align-items-center">
+      <svg
+        class="bi bi-calendar-date-fill fs-5 text-primary"
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zm5.402 9.746c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2z"
+        ></path>
+        <path
+          d="M16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm-2.89-5.435v5.332H5.77V8.079h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z"
+        ></path>
+      </svg>
+      <p
+        style="
+          margin-top: 1px;
+          margin-bottom: 1px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          margin-left: 5px;
+          margin-right: 5px;
+        "
+      >
+        Upcoming
+      </p>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="padding-top: 0px; padding-bottom: 0px"
+    >
+      <p style="margin-top: 0px; margin-bottom: 0px">0h</p>
+      <p
+        style="
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-left: 4px;
+          margin-right: 4px;
+        "
+      >
+        0
+      </p>
+    </div>
+  </li>
+  <li
+    pDroppable="dd"
+    (click)="activateSelected('someday')"
+    (onDrop)="somedayDropEventHandler($event)"
+    [ngClass]="
+      menuList['someday']['selected']
+        ? ' text-white list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2 bg-danger'
+        : 'list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2'
+    "
+    style="padding-left: 0px; padding-right: 0px"
+  >
+    <div class="d-flex justify-content-center align-items-center">
+      <svg
+        class="fs-5 text-warning"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="-32 0 512 512"
+        width="1em"
+        height="1em"
+        fill="currentColor"
+      >
+        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+        <path
+          d="M96 32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32zM448 464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192H448V464z"
+        ></path>
+      </svg>
+      <p
+        style="
+          margin-top: 1px;
+          margin-bottom: 1px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          margin-left: 5px;
+          margin-right: 5px;
+        "
+      >
+        Someday
+      </p>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="padding-top: 0px; padding-bottom: 0px"
+    >
+      <p style="margin-top: 0px; margin-bottom: 0px">0h</p>
+      <p
+        style="
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-left: 4px;
+          margin-right: 4px;
+        "
+      >
+        0
+      </p>
+    </div>
+  </li>
+  <li
+    pDroppable="dd"
+    (click)="activateSelected('completed')"
+    (onDrop)="completedDropEventHandler($event)"
+    [ngClass]="
+      menuList['completed']['selected']
+        ? ' text-white list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2 bg-danger'
+        : 'list-group-item d-flex flex-row justify-content-between align-items-center my-0 mb-1 mx-0 px-2'
+    "
+    style="padding-left: 0px; padding-right: 0px"
+  >
+    <div class="d-flex justify-content-center align-items-center">
+      <svg
+        class="bi bi-check-circle fs-5 text-info"
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+        ></path>
+        <path
+          d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+        ></path>
+      </svg>
+      <p
+        style="
+          margin-top: 1px;
+          margin-bottom: 1px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          margin-left: 5px;
+          margin-right: 5px;
+        "
+      >
+        Completed
+      </p>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="padding-top: 0px; padding-bottom: 0px"
+    >
+      <p style="margin-top: 0px; margin-bottom: 0px">0h</p>
+      <p
+        style="
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-left: 4px;
+          margin-right: 4px;
+        "
+      >
+        {{ completedTodos.length }}
+      </p>
+    </div>
+  </li>
+</ul>

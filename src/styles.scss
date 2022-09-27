@@ -1,1 +1,232 @@
 /* You can add global styles to this file, and also import other style files */
+
+.bs-icon {
+  --bs-icon-size: 0.75rem;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--bs-icon-size);
+  width: calc(var(--bs-icon-size) * 2);
+  height: calc(var(--bs-icon-size) * 2);
+  color: var(--bs-primary);
+}
+
+.cursor-display {
+  cursor: pointer;
+}
+
+@media (min-width: 300px) {
+  .settingsMenuContainer {
+    position: relative;
+    .settingMenu {
+      border-radius: 5px;
+      position: absolute;
+      top: -19px;
+      right: 5px;
+      background-color: #ffc107;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding: 0px;
+      margin: 0px;
+      min-width: 100px;
+      li {
+        border-radius: 5px;
+        list-style: none;
+        padding: 10px;
+        margin: 0px;
+        width: 100%;
+        &:hover {
+          background-color: coral;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .settingsMenuContainer {
+    position: relative;
+    .settingMenu {
+      border-radius: 5px;
+      position: absolute;
+      top: 25px;
+      right: 5px;
+      background-color: #ffc107;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding: 0px;
+      margin: 0px;
+      min-width: 100px;
+      li {
+        border-radius: 5px;
+        list-style: none;
+        padding: 10px;
+        margin: 0px;
+        width: 100%;
+        &:hover {
+          background-color: coral;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.bs-icon-xs {
+  --bs-icon-size: 1rem;
+  width: calc(var(--bs-icon-size) * 1.5);
+  height: calc(var(--bs-icon-size) * 1.5);
+}
+
+.bs-icon-sm {
+  --bs-icon-size: 1rem;
+}
+
+.bs-icon-md {
+  --bs-icon-size: 1.5rem;
+}
+
+.bs-icon-lg {
+  --bs-icon-size: 2rem;
+}
+
+.bs-icon-xl {
+  --bs-icon-size: 2.5rem;
+}
+
+.bs-icon.bs-icon-primary {
+  color: var(--bs-white);
+  background: var(--bs-primary);
+}
+
+.bs-icon.bs-icon-primary-light {
+  color: var(--bs-primary);
+  background: rgba(var(--bs-primary-rgb), 0.2);
+}
+
+.bs-icon.bs-icon-semi-white {
+  color: var(--bs-primary);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.bs-icon.bs-icon-rounded {
+  border-radius: 0.5rem;
+}
+
+.bs-icon.bs-icon-circle {
+  border-radius: 50%;
+}
+
+#app-todo-item :hover {
+  background-color: #ffc107;
+  color: white;
+}
+
+@media (min-width: 300px) {
+  .app-menu {
+    /*display: none;*/
+  }
+}
+
+@media (min-width: 768px) {
+  .app-menu {
+    display: unset;
+  }
+}
+
+@media (min-width: 300px) {
+  .app-task-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 300px) {
+  .app-task-details-p {
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+  }
+}
+
+@media (min-width: 300px) {
+  .app-tasks-container {
+    background-color: #fff;
+    color: red;
+  }
+}
+
+@media (min-width: 300px) {
+  .app-todo-container {
+    width: 100%;
+  }
+}
+
+.app-todo-form-container {
+  background: #ffffff;
+  width: 100%;
+}
+
+@media (min-width: 300px) {
+  .app-todo-form-input-text {
+    font-size: 10px;
+    border-style: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-todo-form-input-text {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .app-todo-form-input-text {
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 300px) {
+  .app-todo-details-p {
+    padding: 0px;
+    margin: 0px;
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-todo-details-p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-todo-container.app-todo-form-container.app-todo-detail-container {
+    font-size: 20px;
+    backdrop-filter: blur(0px) grayscale(0%);
+  }
+}
+
+//media Queries
+@media (min-width: 300px) {
+  .app-notfound-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 300px) {
+  .not-found-container {
+    width: 200px;
+  }
+}

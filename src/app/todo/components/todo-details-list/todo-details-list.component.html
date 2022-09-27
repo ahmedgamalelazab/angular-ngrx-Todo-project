@@ -1,0 +1,11 @@
+<app-todo-details-list-item
+  pDraggable="dd"
+  (onDragStart)="dragStart(todo)"
+  (currentTodoPlayedEvent)="handleRunOrderClick($event)"
+  (currentTodoPaused)="handlePauseOrderClick($event)"
+  (handleOnCompletedEventEmitter)="handleCompletedTaskEvent($event)"
+  *ngFor="let todo of todayTodos"
+  [todo]="todo"
+  class="d-flex justify-content-start align-items-center app-todo-container app-todo-form-container px-1 app-todo-detail-container py-2 mb-2"
+>
+</app-todo-details-list-item>

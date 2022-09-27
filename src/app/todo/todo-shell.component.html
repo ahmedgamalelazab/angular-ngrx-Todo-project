@@ -1,0 +1,40 @@
+<div class="row mt-0 ms-0 me-0">
+  <div class="col-12 col-md-3 app-menu px-0 py-0 pe-sm-0 pe-md-2">
+    <app-menu
+      [todayTodos]="todayTodos"
+      [completedTodos]="completedTodos"
+      (selectedMenuList)="handleTaskMenuSelectionChange($event)"
+    ></app-menu>
+  </div>
+  <div class="col-md-9 px-0" style="background: #f4f4f4">
+    <app-todo-details
+      [completedTodos]="completedTodos"
+      [todayTodos]="todayTodos"
+      (onSubmitTodo)="handleNewTodoEntry($event)"
+      (onRunOrderClickedFromItem)="containerComponentHandleRunRequest($event)"
+      (onPauseOrderClickedFromItem)="
+        containerComponentHandlePauseRequest($event)
+      "
+      (onPauseOrderClickedFromItemEventEmitter)="
+        containerHandleCompletedTaskEvent($event)
+      "
+    ></app-todo-details>
+    <table
+      *ngIf="currentSelectedTodos.length > 0"
+      class="table-bordered table-responsive w-100 text-center"
+    >
+      <thead>
+        <th>todo id</th>
+        <th>description</th>
+        <th>total hrs</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tdo of currentSelectedTodos">
+          <td>{{ tdo.id }}</td>
+          <td>{{ tdo.description }}</td>
+          <td>{{ getFormattedTimer(tdo.totalHrs ?? 0) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
