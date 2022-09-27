@@ -3,7 +3,7 @@
  * @param seconds
  */
 export const timerUtil = function returnTime(seconds: number): string {
-  if (seconds >= 0 || seconds <= 60) {
+  if (seconds >= 0 && seconds <= 60) {
     return `00:00:${seconds < 10 ? `0 ${seconds}` : seconds}`.replace(' ', '');
   } else if (seconds > 60 && seconds <= 3600) {
     let s = seconds % 60;
